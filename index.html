@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <!--  This site was created in Webflow. http://www.webflow.com  -->
-<!--  Last Published: Sun May 17 2020 04:16:47 GMT+0000 (Coordinated Universal Time)  -->
+<!--  Last Published: Sun May 17 2020 04:38:02 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="5ebff780106a8a26d9d7fec7" data-wf-site="5ebff4a0acbc563ed109b0f9">
 <head>
   <meta charset="utf-8">
   <title>Home</title>
+  <meta content="Handmade in Italy" name="description">
   <meta content="Home" property="og:title">
+  <meta content="Handmade in Italy" property="og:description">
   <meta content="Home" property="twitter:title">
+  <meta content="Handmade in Italy" property="twitter:description">
+  <meta property="og:type" content="website">
+  <meta content="summary_large_image" name="twitter:card">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
@@ -16,7 +21,7 @@
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
   <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
-  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
   <link href="images/webclip.png" rel="apple-touch-icon">
   <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
   <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
@@ -92,29 +97,34 @@ bk_keepRatio();
             "gsx$infoit.$t"
         ]
         };
+        var cacheContent = $('#gifcontainer').html();
         $('#search').on("input", function(){
-            // Print entered value in a div box
-            var fuse = new Fuse(entry, options);
-            entrySearched = fuse.search($(this).val())
-            console.log(entrySearched);
-            entrySearched = entrySearched.map(function(item){
-                return item["item"]
-            })
-            // sort to show recent first
-            // show entries
-            $(gifContainer).html("");
-            $($(entrySearched).get()).each(function(){
-                // Column names are name, age, etc.
-                gifItem = makeGifItem(this);
-                $(gifContainer).append(gifItem);
-            });
-            // set ratio on entries
-            bk_keepRatio();
-            $('.videoitem').hover(function() { 
-                $(this).css("background-image", "url(" + $(this).data("gif") + ")"); 
-            }).mouseleave(function(){
-                $(this).css("background-image", "url(" + $(this).data("png") + ")"); 
-            });
+            if($(this).val() == "") {
+                $('#gifcontainer').html(cacheContent);
+            } else {
+                // Print entered value in a div box
+                var fuse = new Fuse(entry, options);
+                entrySearched = fuse.search($(this).val())
+                console.log(entrySearched);
+                entrySearched = entrySearched.map(function(item){
+                    return item["item"]
+                })
+                // sort to show recent first
+                // show entries
+                $(gifContainer).html("");
+                $($(entrySearched).get()).each(function(){
+                    // Column names are name, age, etc.
+                    gifItem = makeGifItem(this);
+                    $(gifContainer).append(gifItem);
+                });
+                // set ratio on entries
+                bk_keepRatio();
+                $('.videoitem').hover(function() { 
+                    $(this).css("background-image", "url(" + $(this).data("gif") + ")"); 
+                }).mouseleave(function(){
+                    $(this).css("background-image", "url(" + $(this).data("png") + ")"); 
+                });
+            }
         })
  });
 </script>
