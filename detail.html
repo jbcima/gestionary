@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--  This site was created in Webflow. http://www.webflow.com  -->
-<!--  Last Published: Sun May 17 2020 04:38:02 GMT+0000 (Coordinated Universal Time)  -->
+<!--  Last Published: Sun May 17 2020 04:44:50 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="5ec005d9207ff62455508285" data-wf-site="5ebff4a0acbc563ed109b0f9">
 <head>
   <meta charset="utf-8">
@@ -65,7 +65,10 @@
 	}
 	function makeGifItem(data) {
     var gifItem = '<a style="text-decoration: none" href="/detail?data=' + encodeURIComponent(data.id.$t) + '"><div class="videoitem" style="background-image: url(' + data.gsx$png.$t + '); background-size: cover;" data-gif="' + data.gsx$gif.$t + '"></div></a>'
-		return gifItem;
+		preload([
+    	data.gsx$gif.$t
+		]);
+    return gifItem;
 	}
     function makeMastheadGifItem(data) {
         var gifItem = {
@@ -189,6 +192,15 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         //video.src = window.URL.createObjectURL(stream);
         video.srcObject = stream;
         video.play();
+    });
+}
+</script>
+      <script>
+function preload(arrayOfImages) {
+    $(arrayOfImages).each(function(){
+        $('<img/>')[0].src = this;
+        // Alternatively you could use:
+        // (new Image()).src = this;
     });
 }
 </script>
