@@ -486,6 +486,7 @@ figcaption {
 .input.search {
   display: inline-block;
   width: auto;
+  min-width: 300px;
   margin-bottom: 0px;
 }
 
@@ -648,10 +649,15 @@ figcaption {
 }
 
 .image-5 {
+  width: 44px;
   height: 100%;
   padding-top: 0px;
   padding-right: 20px;
   opacity: 0.43;
+}
+
+.image-5._2 {
+  display: none;
 }
 
 .heading {
@@ -804,7 +810,14 @@ figcaption {
   text-transform: uppercase;
 }
 
+.div-block-3 {
+  display: none;
+}
+
 @media screen and (max-width: 991px) {
+  .input.search {
+    min-width: 200px;
+  }
   .form-search {
     display: -webkit-box;
     display: -webkit-flex;
@@ -860,6 +873,11 @@ figcaption {
 }
 
 @media screen and (max-width: 767px) {
+  .input.search {
+    width: 100%;
+    min-width: auto;
+    font-size: 16px;
+  }
   .card-wrap {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
@@ -867,7 +885,36 @@ figcaption {
     flex: 1;
   }
   .form-search {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    right: 0px;
+    bottom: auto;
+    z-index: 100;
     display: none;
+    background-color: #fff;
+  }
+  .form {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+  .image-5 {
+    width: 24px;
+    margin-right: 10px;
+    margin-left: 20px;
+    padding: 4px;
+    opacity: 1;
+  }
+  .image-5._2 {
+    display: block;
+    margin-right: 20px;
   }
   .heading {
     font-size: 20px;
@@ -908,11 +955,38 @@ figcaption {
     padding-right: 22px;
     padding-left: 22px;
   }
+  .image-7 {
+    width: 25px;
+    padding: 4px;
+  }
+  .div-block-3 {
+    position: absolute;
+    left: auto;
+    top: 0%;
+    right: 0%;
+    bottom: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 42px;
+    height: 60px;
+    margin-right: 60px;
+    padding-left: 18px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 479px) {
   .image-5 {
-    height: 18px;
+    height: 24px;
   }
   .brand {
     padding-left: 0px;
