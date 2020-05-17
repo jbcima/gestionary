@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--  This site was created in Webflow. http://www.webflow.com  -->
-<!--  Last Published: Sun May 17 2020 02:49:06 GMT+0000 (Coordinated Universal Time)  -->
+<!--  Last Published: Sun May 17 2020 03:10:07 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="5ec005d9207ff62455508285" data-wf-site="5ebff4a0acbc563ed109b0f9">
 <head>
   <meta charset="utf-8">
@@ -26,7 +26,7 @@
     <a href="index.html" class="brand w-nav-brand">
       <h4>Gestionary</h4>
     </a>
-    <nav role="navigation" class="nav-menu w-nav-menu"><a href="about.html" class="nav-link w-nav-link">About</a><a href="#" class="w-nav-link">Italiana</a></nav>
+    <nav role="navigation" class="nav-menu w-nav-menu"><a href="about.html" class="nav-link w-nav-link">About</a></nav>
     <div id="search-form" class="form-search w-form">
       <form method="post" data-name="" class="form"><img src="images/search.svg" alt="" class="image-5"><input type="text" id="search" name="Search" data-name="Search" placeholder="Enter a gesture" maxlength="256" class="input search w-input"><img src="images/close.svg" width="44" data-w-id="2ef80f39-903b-8211-c91d-82f936ff8ee9" alt="" class="image-5 _2"></form>
       <div class="w-form-done"></div>
@@ -45,7 +45,7 @@
   </div>
   <div id="content" class="container-3 w-container">
     <div class="div-block-2">
-      <div data-video-urls="" data-autoplay="true" data-loop="true" data-wf-ignore="true" id="video" class="background-video w-background-video w-background-video-atom"><video autoplay="" loop="" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover"></video></div><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" id="image" alt="" class="image-6"></div>
+      <div data-video-urls="" data-autoplay="true" data-loop="true" data-wf-ignore="true" id="video" class="background-video w-background-video w-background-video-atom"><video autoplay="" loop="" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover"></video></div><img src="images/Screen-Shot-2020-05-16-at-10.58.42-PM.png" id="image" alt="" class="image-6"></div>
     <h5 id="title" class="heading-2"></h5>
     <div id="info" class="div-block"></div>
     <div class="w-embed w-script">
@@ -71,8 +71,8 @@
         var gifItem = {
             'png': data.gsx$png.$t,
             'gif': data.gsx$gif.$t,
-            'title': data.gsx$titleen.$t,
-            'info': data.gsx$infoen.$t
+            'title': data.gsx$titleit.$t,
+            'info': data.gsx$infoit.$t
         } 
 		return gifItem;
 	}
@@ -115,9 +115,9 @@ $.getJSON(url, function(data) {
         // location: 0,
         // distance: 100,
         keys: [
-            "gsx$titleen.$t", 
-            "gsx$tagen.$t", 
-            "gsx$infoen.$t"
+            "gsx$titleit.$t", 
+            "gsx$tagit.$t", 
+            "gsx$infoit.$t"
         ]
         };
         $('#search').on("input", function(){
